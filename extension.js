@@ -27,6 +27,12 @@ function activate(context) {
 			}
 		];
 		vscode.window.showQuickPick(test)
+		.then(function (selection) {
+			if (selection) {
+				vscode.window.showInformationMessage("You selected " + selection.label);
+			}
+		}
+		);
 	});
 
 	context.subscriptions.push(disposable);
